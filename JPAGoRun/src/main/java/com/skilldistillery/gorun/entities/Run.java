@@ -1,11 +1,15 @@
 package com.skilldistillery.gorun.entities;
 
+import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Run {
@@ -14,7 +18,25 @@ public class Run {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private double length;
+	private int rating;
+	
+	private String weather;
+	
+	private Date date;
+	
+	@Column(name = "heart_rate")
+	private int heartRate;
+	
+	private double time;
+	
+	private boolean completed;
+	
+	@Column(name = "picture_url")
+	private String picture;
+	
+	@ManyToOne
+	@JoinColumn(name = "route_id")
+	private Route route;
 
 	public Run() {
 		super();
@@ -28,12 +50,75 @@ public class Run {
 		this.id = id;
 	}
 
-	public double getLength() {
-		return length;
+	public int getRating() {
+		return rating;
 	}
 
-	public void setLength(double length) {
-		this.length = length;
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public String getWeather() {
+		return weather;
+	}
+
+	public void setWeather(String weather) {
+		this.weather = weather;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public int getHeartRate() {
+		return heartRate;
+	}
+
+	public void setHeartRate(int heartRate) {
+		this.heartRate = heartRate;
+	}
+
+	public double getTime() {
+		return time;
+	}
+
+	public void setTime(double time) {
+		this.time = time;
+	}
+
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+	public Route getRoute() {
+		return route;
+	}
+
+	public void setRoute(Route route) {
+		this.route = route;
+	}
+
+	@Override
+	public String toString() {
+		return "Run [id=" + id + ", rating=" + rating + ", weather=" + weather + ", date=" + date + ", heartRate="
+				+ heartRate + ", time=" + time + ", completed=" + completed + ", picture=" + picture + ", route="
+				+ route + "]";
 	}
 
 	@Override
@@ -53,10 +138,6 @@ public class Run {
 		return id == other.id;
 	}
 
-	@Override
-	public String toString() {
-		return "Run [id=" + id + ", length=" + length + "]";
-	}
-	
+
 	
 }

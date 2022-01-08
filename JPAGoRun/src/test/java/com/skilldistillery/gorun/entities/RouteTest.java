@@ -14,11 +14,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class RunTest {
+class RouteTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Run run;
+	private Route route;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,25 +33,20 @@ class RunTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		run = em.find(Run.class, 1);
+		route = em.find(Route.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		run = null;
+		route = null;
 	}
 
-	@DisplayName("run entity mapping")
+	@DisplayName("route entity mapping")
 	@Test
 	void test1() {
-		assertNotNull(run);
-		assertEquals(4, run.getRating());
+		assertNotNull(route);
+		assertEquals("Denver", route.getCity());
 	}
 
-	@DisplayName("run to route entity mapping")
-	@Test
-	void test2() {
-		assertEquals(1, run.getRoute().getId());
-	}
 }
