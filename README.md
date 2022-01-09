@@ -27,6 +27,7 @@ Go to http://3.130.51.170:8080/GoRun/index.html
 | Route        |POST         | /api/routes      |     Run JSON | Create |
 | Route        |PUT          | /api/routes/{id} | Run JSON     | Update |
 | Route        |DELETE       | /api/routes/{id} |              | Delete |
+| Route        |PUT       | /api/routes/{id}/enable |              | ReEnable |
 
 
 ## Technologies Used
