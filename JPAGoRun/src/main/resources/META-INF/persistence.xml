@@ -7,6 +7,7 @@
     </provider>
 
   <!-- List Entities Here -->
+  <class>com.skilldistillery.gorun.entities.Route</class>
   <class>com.skilldistillery.gorun.entities.Run</class>
 
 

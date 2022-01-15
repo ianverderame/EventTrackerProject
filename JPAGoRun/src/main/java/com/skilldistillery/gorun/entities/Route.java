@@ -19,7 +19,7 @@ public class Route {
 	
 	private String city;
 	
-	private String neighborhood;
+	private String state;
 	
 	private double length;
 	
@@ -56,12 +56,12 @@ public class Route {
 		this.city = city;
 	}
 
-	public String getNeighborhood() {
-		return neighborhood;
+	public String getState() {
+		return state;
 	}
 
-	public void setNeighborhood(String neighborhood) {
-		this.neighborhood = neighborhood;
+	public void setNeighborhood(String state) {
+		this.state = state;
 	}
 
 	public double getLength() {
@@ -90,7 +90,7 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "Route [id=" + id + ", name=" + name + ", city=" + city + ", neighborhood=" + neighborhood + ", length="
+		return "Route [id=" + id + ", name=" + name + ", city=" + city + ", state=" + state + ", length="
 				+ length + ", enabled=" + enabled + ", picture=" + picture + "]";
 	}
 
