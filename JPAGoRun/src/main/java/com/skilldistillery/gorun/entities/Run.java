@@ -1,5 +1,6 @@
 package com.skilldistillery.gorun.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class Run {
 	
 	private String weather;
 	
-	private Date date;
+	private LocalDate date;
 	
 	@Column(name = "heart_rate")
 	private int heartRate;
@@ -66,11 +67,11 @@ public class Run {
 		this.weather = weather;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 

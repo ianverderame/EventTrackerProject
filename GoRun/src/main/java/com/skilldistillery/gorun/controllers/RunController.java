@@ -74,6 +74,7 @@ public class RunController {
 	@PutMapping("runs/{id}")
 	public Run updateRun(@RequestBody Run run, @PathVariable int id, HttpServletResponse res) {
 		Run newRun = null;
+		System.out.println("in update run, run: " + run);
 		try {
 			newRun = runSvc.updateRun(run, id);
 			if (newRun == null) {
@@ -84,6 +85,7 @@ public class RunController {
 			res.setStatus(400);
 			System.err.println("INVALID RUN SENT");
 		}
+		System.out.println("in update run, newrun: " + newRun);
 		return newRun;
 	}
 	
