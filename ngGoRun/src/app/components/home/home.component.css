@@ -1,0 +1,7 @@
+/* .sage {
+  background-color: rgb(87, 156, 117);
+} */
+
+.sage {
+  background-image: linear-gradient(to bottom right, rgb(87, 156, 117, 1), rgb(87, 156, 117, 0));
+}
