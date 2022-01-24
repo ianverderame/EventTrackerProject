@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Go Run</title>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>GoRun</h1>
+      <h4>If You're Going To Run, You Might As Well Track It.</h4>
+      <form name="getRouteListForm"><button type="button" name="routesListButton" id="routesListButton">See All Routes</button></form>
+      <form name="getRunsListForm"><button type="button" name="runsListButton" id="runsListButton">See All Runs</button></form>
+      
+      <div id="routesListDiv"></div>
+      
+      <div id="updateDiv"></div>
+      
+      <div id="runsList"></div>
+      
+      <div id="newRouteDiv">
+          <h3>Create New Route</h3>
+        <form id="newRouteForm">
+            <br><label for="name">Name </label><input type="text" id="name" name="name">
+            <br><label for="city">City </label><input type="text" id="city" name="city">
+            <br><label for="state">State </label><input type="text" id="state" name="state">
+            <br><label for="length">Miles </label><input type="number" id="length" name="length" step="0.01">
+            <br><label for="picture">Picture URL </label><input type="url" id="picture" name="picture">
+            <br><input type="submit" name="submit" id="newRouteButton" value="Submit">
+        </form>
+      </div>
+
+      <div id="newRunDiv">
+          <h3>Log New Run</h3>
+        <form id="newRunForm">
+            <br><label for="rating">Rating </label><input type="number" id="rating" name="rating">
+            <br><label for="weather">Weather </label><input type="text" id="weather" name="weather">
+            <br><label for="date">Date </label><input type="date" id="date" name="date">
+            <br><label for="heartRate">Average Heart Rate </label><input type="number" id="heartRate" name="heartRate">
+            <br><label for="routeId">Route ID </label><input type="number" id="routeId" name="routeId">
+            <br><label for="time">Time (in minutes) </label><input type="number" id="time" name="time" step="0.01">
+            <br><label for="completed">Run Completed? </label><input type="checkbox" id="completed" name="completed">
+            <br><label for="picture">Picture URL </label><input type="url" id="picture" name="picture">
+            <!-- <br><label for="routeId">Route ID Number</label><input type="number" id="routeId" name="routeId"> -->
+            <br><input type="submit" name="submit" id="newRunButton" value="Submit">
+        </form>
+      </div>
+
+    </main>
+  </body>
+</html>
