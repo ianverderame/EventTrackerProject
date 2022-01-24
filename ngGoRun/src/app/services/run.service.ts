@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Run } from '../models/run';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RunService {
-  private baseUrl = 'http://localhost:8083/';
-  private url = this.baseUrl + 'api/runs';
+  // private baseUrl = 'http://localhost:8083/';
+  // private url = this.baseUrl + 'api/runs';
+  private url = environment.baseUrl + 'api/runs';
 
   constructor(private http: HttpClient) {}
 
@@ -46,7 +48,7 @@ export class RunService {
   }
 
   destroy(run: Run): Observable<void> {
-    return this.http.delete<void>(this.baseUrl + 'api/routes/' + `${run.route.id}` + '/runs/' + `${run.id}`).pipe(
+    return this.http.delete<void>(this.url + `${run.route.id}` + '/runs/' + `${run.id}`).pipe(
       catchError((err: any) => {
         return throwError(
           () => new Error('ERROR IN RUNSVC.DESTROY ' + err)
